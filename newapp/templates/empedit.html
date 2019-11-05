@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js'></script>
+
+</head>
+<body>
+<form method="POST" class="post-form" action="/empupdate/{{data.id}}" style="border:2px solid gray" align="center">
+    {% csrf_token %}
+    <div class="container">
+   <br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>Update Details</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Id:</label>
+    <div class="col-sm-4">
+        <input type="text" name="emp_id" required maxlength="10" value="{{ data.id }}"/>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP NAME:</label>
+    <div class="col-sm-4">
+        <input type="text" name="emp_name" required maxlength="10" value="{{ data.emp_name }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP ADDRESS:</label>
+    <div class="col-sm-4">
+        <input type="text" name="emp_address" required maxlength="10" value="{{ data.emp_address }}" />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP GENDER:</label>
+    <div class="col-sm-4">
+        <input type="radio" name="emp_gender"  required maxlength="10" value="female" />female
+        <input type="radio" name="emp_gender"  required maxlength="10" value="male" />male
+         <input type="radio" name="emp_gender"  required maxlength="10" value="other" />other
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP PHONENUM:</label>
+    <div class="col-sm-4">
+        <input type="text" name="emp_number"  required maxlength="10" value="{{ data.emp_number }}" />
+    </div>
+  </div>
+            <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP SALARY:</label>
+    <div class="col-sm-4">
+        <input type="text" name="emp_salary" required maxlength="30" value="{{ data.emp_salary }}" />
+    </div>
+  </div>
+            <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP EMAIL:</label>
+    <div class="col-sm-4">
+        <input type="email" name="empemail"  required maxlength="20" value="{{ data.empemail }}" />
+    </div>
+  </div>    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP PHOTO:</label>
+    <div class="col-sm-4">
+        <input type="file" name="emp_photo"  required maxlength="100" value="{{ data.emp_photo }}" />
+    </div>
+         <div class="form-group row">
+    <label class="col-sm-2 col-form-label">EMP JOIN DATE:</label>
+    <div class="col-sm-4">
+        <input type="date" name="emp_joindate"  required maxlength="20" value="{{ data.emp_joindate }}" />
+    </div>
+
+  </div>
+    <a href="/empupdate/{{ data.id }}"><span class="glyphicon glyphicon-pencil" ><button>Update</button></span></a>
+
+
+    </div>
+</form>
+</body>
+</html>

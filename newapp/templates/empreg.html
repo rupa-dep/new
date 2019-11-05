@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--    <meta charset="UTF-8">-->
+    <title>Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js'></script>
+</head>
+<body align="center" style="color:red">
+
+<center>
+<form method="POST" class="post-form" action="empregsave/">
+<!--    {% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+ <table border="10">
+     <tr align="center">EMPLOYE FORM</tr>
+     {% csrf_token %}
+     {{ form.as_p }}
+     <tr><td>EMP NAME:</td><td><input type="text" name="emp_name" maxlength="20" required></td></tr>
+     <tr><td>EMP ADDRESS:</td><td><input type="text" name="emp_address" maxlength="10" required></td></tr>
+     <tr><td>EMP GENDER:</td><td><input type="radio" name="emp_gender" value="male"> Male
+                        <input type="radio" name="emp_gender" value="female"> Female
+                        <input type="radio" name="emp_gender" value="other"> Other </td></tr>
+     <tr><td>EMP PHONENUM:</td><td><input type="text" name="emp_number" required maxlength="10"></td></tr>
+     <tr><td>EMP SALARY:</td><td><input type="text" name="emp_salary" max_length = 30 required></tr>
+     <tr><td>EMP EMAIL:</td><td><input type="email" required name="empemail" maxlength="20"></td></tr>
+     <tr><td>EMP PHOTO:</td><td><input type="file" name="emp_photo"></td></tr>
+     <tr><td>EMP JOIN DATE:</td><td><input type="date" name="emp_joindate"></td></tr>
+     <tr><td>click</td><td><button type="submit" align="center">save</button></td></tr>
+
+ </table>
+    <center><a href="/empshow" class="btn btn-primary">SHOW ALL RECORDS</a></center>
+</form>
+</center>
+</body>
+</html>
+
+
+

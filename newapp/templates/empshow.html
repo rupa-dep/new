@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Records</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<center><a href="/empreg" class="btn btn-primary">Add New Record</a>
+<table class="table table-striped table-bordered table-sm" border="10" style="color:red">
+    <thead class="thead-dark">
+    <tr>
+        <th>emp_id</th>
+        <th>emp_name</th>
+        <th>emp_address</th>
+<!--        <th>emp_gender</th>-->
+        <th>emp_number</th>
+<!--        <th>emp_salary</th>-->
+        <th>empemail</th>
+        <th>emp_photo</th>
+        <th>emp_joindate</th>
+        <th>operations</th>
+<!--        <th>emp_color</th>-->
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for data in data %}
+
+    <tr>
+        <td>{{ data.id }}</td>
+        <td>{{ data.emp_name }}</td>
+        <td>{{ data.emp_address }}</td>
+<!--        <td>{{ data.emp_gender }}</td>-->
+        <td>{{ data.emp_number }}</td>
+<!--        <td>{{ data.emp_salary }}</td>-->
+        <td>{{ data.empemail }}</td>
+        <td>{{ data.emp_photo }}</td>
+        <td>{{ data.emp_joindate }}</td>
+        <td><button><a href="/empedit/{{ data.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a></button>
+            <button><a href="/empdelete/{{ data.id }}">Delete</a></button>
+            <button><a href="/total/{{ data.id }}">details</a></button>
+
+        </td>
+
+
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</center>
+</body>
+</html>
